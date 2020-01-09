@@ -32,10 +32,19 @@ class CIMailer
    */
   public function &create($email, ...$args):CIMail
   {
-    get_instance()->email->clear(true);
     if (is_string($email)) $email = new $email(...$args);
     $this->email = $email;
     return $this->email;
+  }
+
+  /**
+   * [reset description]
+   * @date  2020-01-09
+   * @param bool       $clearAttatchments [description]
+   */
+  public function reset(bool $clearAttatchments)
+  {
+    get_instance()->email->clear($clearAttatchments);
   }
 
   /**
@@ -83,6 +92,8 @@ class CIMailer
     if ($this->email->text) {
       get_instance()->email->set_alt_message($this->email->text);
     }
+
+    if ($this->email->replyTo) get_instance()->email->reply_to($this->replyTo[0], $this->replyTo[1]);
 
     return get_instance()->email->send();
   }
