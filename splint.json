@@ -1,0 +1,21 @@
+{
+  "name": "francis94c/ci-mail",
+  "type": "library",
+  "description": "Improved Email Sending Library for Code Igniter.",
+  "tags": [],
+  "page": "https://github.com/francis94c/ci-mail",
+  "authors": [
+    {
+      "name": "Francis Ilechukwu",
+      "email": "francis94c@gmail.com",
+      "page": "about.me/francisilechukwu",
+      "role": "Developer"
+    }
+  ],
+  "php": ">=7.3",
+  "autoload": {
+    "libraries" : [
+      ["CIMailer", "@email", "mail"]
+    ]
+  }
+}
