@@ -42,7 +42,7 @@ class CIMailer
    * @date  2020-01-09
    * @param bool       $clearAttatchments [description]
    */
-  public function reset(bool $clearAttatchments)
+  public function reset(bool $clearAttatchments=false)
   {
     get_instance()->email->clear($clearAttatchments);
   }
